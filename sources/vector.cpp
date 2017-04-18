@@ -9,7 +9,7 @@ vector_t::vector_t(unsigned int size)
 {
   size_=size;
   capacity_=size;
-  ptr_=new int[capacity_];
+  ptr_=new int[capacity_]{};
 }
 vector_t::vector_t(const vector_t& other)
 {

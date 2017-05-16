@@ -72,6 +72,7 @@ auto vector_t::push_back(int value) -> void
   ptr_[size_++] = value;
 }
 auto vector_t::delval() -> int
+{
   if (size_==0)
     {  
        system("pause");

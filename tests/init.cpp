@@ -37,7 +37,7 @@ SCENARIO("=")
 	REQUIRE(vector2[0]==1);
 	REQUIRE(vector2[1]==2);
 } 
-SCENARIO("push_back")
+SCENARIO("push back")
 {
 	vector_t vector(2);
 	vector.push_back(1);

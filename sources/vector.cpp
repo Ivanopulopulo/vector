@@ -72,7 +72,7 @@ auto vector_t::delval() -> int
 	if (size_ != 0)
 	{
 		
-		if (size_ -1  == capacity_ /2))
+		if (size_ -1  == capacity_ /2)
 		{	
 			capacity_ = capacity_ / 2;	
 			

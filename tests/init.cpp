@@ -7,61 +7,56 @@ SCENARIO("vector init", "[init]")
 	REQUIRE(vector.size() == 0);
 	REQUIRE(vector.capacity() == 0);
 }
-SCENARIO("vector with param", "[init]")
-{
-	vector_t vector(4);
-	REQUIRE(vector.size() == 4);
-	REQUIRE(vector.capacity() == 4);
-	
-	for(unsigned int index = 0; index < vector.size(); ++ index)
-	
-		vector[index]==0;
-	
+SCENARIO(" init with param")
+{ 
+	vector_t vector(3); 
+	REQUIRE(vector.size() == 3); 
+	REQUIRE(vector.capacity() == 3); 
+} 
+SCENARIO("vector init with object")
+{ 
+	vector_t vector; 
+	vector.push_back(5); 
+	vector.push_back(6); 
+	vector_t vector2(vector);
+	REQUIRE(vector.size() == vector2.size());
+	REQUIRE(vector.capacity() == vector2.capacity());
+	REQUIRE(vector[0] == vector2[0]);
+	REQUIRE(vector[1] == vector2[1]);
 }
-SCENARIO("vector init object ", "[init]")
+SCENARIO("=")
+{ 
+	vector_t vector, vector2(2); 
+	vector.push_back(1); 
+	vector.push_back(2);  
+	REQUIRE(vector.size() == 2); 
+	REQUIRE(vector.capacity() == 2); 
+	vector2 = vector; 
+	REQUIRE(vector2.size() == 2); 
+	REQUIRE(vector2.capacity() == 2);
+	REQUIRE(vector2[0]==1);
+	REQUIRE(vector2[1]==2);
+} 
+SCENARIO("push_back")
 {
-	vector_t a;
-	REQUIRE(a.size()==0);
-	REQUIRE(a.capacity()==0);
-	a.push_back(1);
-	a.push_back(2);
-	a.push_back(3);
-	REQUIRE(a.size() == 3);
-	REQUIRE(a.capacity() == 4);
-	 vector_t b(a);
-	REQUIRE(b.size() == 3);
-	REQUIRE(b.capacity() == 4);
-	for(unsigned int i = 0; i < b.size(); i++)
-		b[i] == a[i];
+	vector_t vector(2);
+	vector.push_back(1);
+	vector.push_back(2);
+	vector.push_back(3);
+	REQUIRE(vector.size() == 5);
+	REQUIRE(vector.capacity() == 8);
 }
-SCENARIO("vector operator =" , "[init]")
+SCENARIO("[]")
 {
-	vector_t b(4), a;
-	REQUIRE(a.size()==0);
-	REQUIRE(a.capacity()==0);
-	a.push_back(1);
-	a.push_back(2);
-	a.push_back(3);
-	REQUIRE(a.size() == 3);
-	REQUIRE(a.capacity() == 4);
-	 b = a;
-	REQUIRE(b.size() == 3);
-	REQUIRE(b.capacity() == 4);
-	for(unsigned int i = 0; i < b.size(); i++)
-		b[i] == a[i];
-}
-SCENARIO("vector pushback", "[init]")
-{
-	vector_t vector(3);
-	REQUIRE(vector.size()==3);
-	REQUIRE(vector.capacity()==3);
-	vector.push_back(4);
-	REQUIRE(vector.size()==4);
-	REQUIRE(vector.capacity()==6);
-	REQUIRE(vector[0]==0);
-	REQUIRE(vector[1]==0);
-	REQUIRE(vector[2]==0);
-	REQUIRE(vector[3]==4);
+	vector_t vector(2);
+	vector.push_back(1);
+	vector.push_back(2);
+	vector.push_back(3);
+	REQUIRE(vector[0] == 0);
+	REQUIRE(vector[1] == 0);
+	REQUIRE(vector[2] == 1);
+	REQUIRE(vector[3] == 2);
+	REQUIRE(vector[4] == 3);
 }
 SCENARIO("delval")
 {

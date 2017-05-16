@@ -64,6 +64,7 @@ SCENARIO("vector pushback", "[init]")
 	REQUIRE(vector[3]==4);
 }
 SCENARIO("delval")
+{
 	vector_t vector(2);
 	vector.push_back(1);
 	vector.push_back(2);
@@ -85,5 +86,6 @@ SCENARIO("delval")
 	REQUIRE(vector.delval() == 0);
 	REQUIRE(vector.size() == 0);
 	REQUIRE(vector.capacity() == 0);
+}
 
 	

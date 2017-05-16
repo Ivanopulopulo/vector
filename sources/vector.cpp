@@ -73,6 +73,7 @@ auto vector_t::push_back(int value) -> void
 }
 auto vector_t::delval() -> int
 if(size_==0)
+{  
   system("pause");
   exit(1);
 }

@@ -30,7 +30,7 @@ SCENARIO("=")
 	vector.push_back(1); 
 	vector.push_back(2);  
 	REQUIRE(vector.size() == 2); 
-	REQUIRE(vector.capacity() == 2); 
+	REQUIRE(vector.capacity() == 4); 
 	vector2 = vector; 
 	REQUIRE(vector2.size() == 2); 
 	REQUIRE(vector2.capacity() == 2);

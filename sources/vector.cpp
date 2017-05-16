@@ -88,7 +88,7 @@ for(unsigned int i = 0; i<size_-1; i++)
   delete[] ptr_;
   size_--;
   return n;
-  
+}
  auto vector_t::operator[](unsigned int index) const noexcept -> int
 {
   if(index >= size_)
